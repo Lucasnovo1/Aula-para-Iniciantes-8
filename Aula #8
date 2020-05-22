@@ -1,0 +1,55 @@
+
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Aula_c
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i = 1, resposta = 0, formadepagamento = 0;
+            double totalProdutos = 0, precoEtiqueta = 0, valorpagamento = 0;
+
+            Console.WriteLine("Informe o preço de etiquetas do produto");
+            precoEtiqueta = int.Parse(Console.ReadLine());
+            Console.WriteLine("Preço do produto[" + i + "]" + precoEtiqueta);
+            totalProdutos = totalProdutos + precoEtiqueta;
+            i++;
+            Console.WriteLine("Dejesa informar mais produtos? (0) Sim ou (1) Não");
+            resposta = int.Parse(Console.ReadLine());
+            while (resposta != 1)
+            {
+                Console.WriteLine("Informe o código da forma de pagamento: ");
+                formadepagamento = int.Parse(Console.ReadLine());
+                if (formadepagamento == 1)
+                {
+                    valorpagamento = totalProdutos - (totalProdutos * 0.15);
+                }
+                else if (formadepagamento == 2)
+                {
+                    valorpagamento = totalProdutos - (totalProdutos * 0.10);
+
+                }
+                else if (formadepagamento == 3)
+                
+                    valorpagamento = totalProdutos - (totalProdutos * 0.5);
+                }
+                else if (formadepagamento == 4)
+                {
+                    valorpagamento = totalProdutos;
+
+                }
+                else
+                {
+                    valorpagamento = totalProdutos + (totalProdutos * 0.05);
+                }
+                Console.WriteLine("Valor total do produto: " + totalProdutos + "\n Código da forma de pagamento|: " + formadepagamento + "\n Valor a ser pago: " + Math.Round(valorpagamento, 2));
+                Console.ReadKey();
+            }
+        }
+        
+    }
+}
